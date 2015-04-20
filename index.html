@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Programový prostriedok pre spracovanie cielenej reklamy - Bakalárska práca - Michal Takáč</title>
+
+    <meta name="description" content="Bakalárska práca - Programový prostriedok pre spraxovanie cielenej reklamy">
+    <meta name="author" content="Michal Takac">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <section>
+            <h3>Programový prostriedok pre spracovanie cielenej reklamy</h3>
+            <p>Bakalárska práca</p>
+            <p>
+              <small><a href="http://www.michaltakac.com">Michal Takáč</a> / <a href="http://twitter.com/michaltakac">@michaltakac</a></small>
+            </p>
+          </section>
+          <section>
+            <h2>Tipy a triky pri používaní tejto prezentácie:</h2>
+            <ul>
+              <li>
+                Stlač <strong>ESC</strong> pre prehľad slidov.
+              </li>
+              <li>
+                Alt + klik na akýkoľvek element funguje ako zoom pomocou pluginu <a href="http://lab.hakim.se/zoom-js">zoom.js</a>.
+              </li>
+              <li>Stlačením "B" alebo "." prezentujúci stmaví obrazovku (pauza).</li>
+              <li>
+                Výber tém: <br>
+                <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Úvod</h2>
+          <p class="fragment">Programový prostriedok = plugin pre Wordpress</p>
+          <p class="fragment"><b>Ciele:</b></p> 
+          <ul>
+            <li class="fragment">Vytvoriť službu na báze affiliate marketingu</li>
+            <li class="fragment">Využitie XML feedu z Heureka.cz</li>
+            <li class="fragment">Vytvorenie novej, zaujímavej služby pre inzerentov</li>
+            <li class="fragment">Prehľad štatistík</li>
+          </ul>
+        </section>
+
+        <section>
+        <h2>Affiliate marketing</h2>
+          <section> 
+            <p>Provízny systém vo forme spolupráce medzi predajcami výrobkov alebo poskytovateľov služieb a partnermi, ktorí sa snažia tieto výrobky/služby propagovať.</p>
+          </section>
+          <section>
+            <p>Internetový obchod - predajca výrobkov</p>
+            <p>Boardmag.cz - partner propagujúci tieto výrobky</p>
+          </section>
+          <section>
+            <p>Za každú transakciu vykonanú užívateľom, ktorý bol po kliknutí na produkt presmerovaný na stránku internetového obchodu, bude vyplatená provízia.</p>
+          </section>
+          <aside class="notes">
+            Poznamky k affiliate marketingu (zatial ziadne).
+          </aside>
+        </section>
+
+        <section>
+          <h2>Výhody provízneho systému</h2>
+          <ul>
+            <li>Kontrola nákladov na reklamu.</li>
+            <li>Efektívne vynaložené finančné prostriedky inzerenta na reklamu.</li>
+            <li>Pri správnom zacielení je prínosom pre všetky zainteresované strany (užívateľ/nakupujúci, predajca, partner).</li>
+          </ul>
+        </section>
+
+        <section>
+          <p>Pozmenený prístup k aplikácii affiliate marketingu - "reverzný" affiliate.</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Kontrola a fakturácia provízie</h2>
+          </section>
+          <section>
+            <h2>Post Affiliate Pro</h2>
+            <ul class="fragment">
+              <li>Softvér pre manažment affiliate partnerov a marketingových kampaní.</li>
+              <li>SaaS - Software as a Service (softvér ako služba).</li>
+              <li>Celosvetovo uznávaný, vytvorený Slovákmi.</li>
+              <li>Snímanie užívateľov pomocou Sessions alebo Cookies (JavaScript, PHP).</li>
+              <li>Prepracované API.</li>
+            </ul>
+          </section>
+          <section>
+            <img src="img/pap_pridanie_affiliate.png" width="100%">
+          </section>
+          <section>
+            <h2>Princíp fungovania</h2>
+            <p class="fragment">Dve vygenerované JavaScript kódy (jeden pre partnerov web a jeden pre internetový obchod) sa umiestnia na každú podstránku do pätičky webu.</p>
+            <p class="fragment">Pre sledovanie transakcií sa vygeneruje špeciálny JavaScript kód určený pre platobný procesor, ktorý daný internetový obchod využíva.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Zobrazenie produktov internetových obchodov dynamicky na našom webe</h2>
+          </section>
+          <section>
+            <h1>XML</h1>  
+            <ul>
+              <li class="fragment">Značkovací jazyk, využívaný k serializácií dát.</li>
+              <li class="fragment">Umožňuje vytvárať vlastné značky - tagy</li>
+            </ul> 
+          </section>
+          <section>
+            <h2>XML feed</h2>
+            <p>Dátový súbor vo formáte XML, ktorý obsahuje export všetkých potrebných informácií o produktoch</p>
+            <p>Heureka.cz + Heureka.sk = tisíce internetových obchodov s <span style="color:red;">rovnakým</span> XML feed-om.</p>
+          </section>
+          <section>
+            <pre><code language="xml" data-trim>
+<SHOP>
+  <SHOPITEM>
+    <ITEM_ID>77246</ITEM_ID>
+    <PRODUCTNAME>Boty Vans Authentic Red</PRODUCTNAME>
+    <PRODUCT>Boty Vans Authentic Red 37</PRODUCT>
+    <DESCRIPTION> Vans Authentic - klasický tvar od Vans Class. Decentní nášivka s logem Vans na boku, gumové logo na patě, výrazný boční lem podrážky. Materiál: pevná látka, látková stélka, gumová podrážka. Bílé tkaničky.</DESCRIPTION>
+    <URL>http://www.freshlabels.cz/produkty/vans-authentic-vs385/?velikost=37</URL>
+    <IMGURL>http://www.freshlabels.cz/public/content-images/shared/product/dsc-0547-123073.jpg</IMGURL>
+    <PRICE_VAT>1450</PRICE_VAT>
+    <MANUFACTURER>Vans</MANUFACTURER>
+    <CATEGORYTEXT>Heureka.cz | Oblečení a móda | Obuv | Dámská obuv</CATEGORYTEXT>
+    <parameter>
+      <PARAM_NAME>Velikost</PARAM_NAME>
+      <VAL>37</VAL>
+    </parameter>
+    <DELIVERY_DATE>0</DELIVERY_DATE>
+    <ITEMGROUP_ID>vs385</ITEMGROUP_ID>
+  </SHOPITEM>
+  <SHOPITEM>
+    <!-- ďalšie informácie k produktu -->
+  </SHOPITEM>
+  <!-- ďalší SHOPITEM, atď... -->
+</SHOP>
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Inštalácia</h2>
+          <p class="fragment">Umiestnenie adresára "rh-affiliate" na server do zložky pre Wordpress pluginy:
+          <pre class="fragment" style="text-align:center;"><code>http://www.priklad.sk/wp-content/plugins/</code></pre> </p>
+          <p class="fragment">Následne je potrebné plugin aktivovať.</p>
+          <img src="img/12_aktivacia_pluginu.png" width="80%" class="fragment">
+        </section>
+
+        <section>
+          <section>
+            <h2>Načítanie a uloženie zoznamu produktov</h2>
+          </section>
+          <section>
+            <h2>Pridanie nového zoznamu</h2>
+            <img src="img/add-new-feed.png" width="80%" class="fragment">
+          </section>
+          <section>
+            <h2>Affiliate ID</h2>
+            <p class="fragment">ID Affiliate partnera.</p>
+            <p class="fragment">Pripojí sa dynamicky ku každému odkazu na produkt z internetového obchodu.</p>
+            <pre class="fragment" style="text-align:center;"><code>http://freshlabels.cz/produkty/nazov-produktu#a_aid=boardmagcz&a_bid=a358d6f9</code></pre>
+          </section>
+          <section>
+            <h2>Uložené zoznamy</h2>
+            <img src="img/rh-feeds.png" width="80%" class="fragment">
+          </section>
+          <section>
+            <h2>Shortcode</h2>
+            <p class="fragment">"Skratkový kód", ktorým sa volajú časti kódu (HTML, PHP, JS).</p>
+            <p class="fragment">Môže byť vložený do článku alebo stránky Wordpressu.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Vloženie produktov do stránky</h2> 
+            <p class="fragment">Skopírovanie [rhaffiliate title="názov"] do článku alebo stránky.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Vyhodnotenie</h2>
+            <ul>
+              <li class="fragment">Úspešné integrovanie Post Affiliate Pro API do pluginu.</li>
+              <li class="fragment">4 internetové obchody z Česka zatiaľ prejavili záujem.</li>
+              <li class="fragment">Prezentácia produktu pre obchod FreshLabels.cz v Prahe.</li>
+              <li class="fragment">Súčasná verzia podporuje len 1 zoznam produktov - potrebná zmena.</li>
+            </ul> 
+          </section>
+        </section>
+
+        <section>
+          <h2>Budúcnosť pluginu</h2>
+          <ul>
+            <li class="fragment">Viac XML feedov naraz v jednom shortcode.</li>
+            <li class="fragment">Cachovanie.</li>
+            <li class="fragment">Sprístupnenie pluginu pre ďalšie webstránky na Českom a Slovenskom trhu.</li>
+            <li class="fragment">Využitie rôznych XML štruktúr.</li>
+            <li class="fragment">Spoplatnenie určitých častí pluginu.</li>
+            <li class="fragment">Spolupráca s firmou Webikon a ďalšie prezentácie o plugine pre internetové obchody a Wordpress komunitu.</li>
+          </ul>
+        </section>
+
+        <section style="text-align: left;">
+          <h1>Ďakujem za pozornosť</h1>
+          <p>
+            - <a href="http://www.boardmag.cz">Boardmag.cz</a> <br>
+            - <a href="https://www.qualityunit.com/#a_aid=michaltakac">Post Affiliate Pro</a>
+          </p>
+          <small>Prezentácia bola vytvorená pomocou <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a>.</small>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
